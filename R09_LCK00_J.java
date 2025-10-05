@@ -2,15 +2,11 @@
 // Noncompliant Code Example (Static)
 
 public class R09_LCK00_J {
-  //changeValue locks on the class object's monitor
-  public static synchronized void changeValue() {
-    // ...
-  }
-}
+  private static final Object lock = new Object();
  
-// Untrusted code
-synchronized (R09_LCK00_J.class) {
-  while (true) {
-    Thread.sleep(Integer.MAX_VALUE); // Indefinitely delay someObject
+  public static void changeValue() {
+    synchronized (lock) { // Locks on the private Object
+      // ...
+    }
   }
 }
