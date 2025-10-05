@@ -1,3 +1,7 @@
+// IDS03-J. Do not log unsanitized user input
+// Noncompliant Code Example
+// Compliant Solution (Sanitized User)
+
 import java.util.regex.Pattern;
 
 public class R00_IDS03_J {
