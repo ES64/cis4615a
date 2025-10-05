@@ -1,3 +1,4 @@
+// TPS03-J. Ensure that tasks executing in a thread pool do not fail silently
 
 final class PoolService {
   // The values have been hard-coded for brevity
