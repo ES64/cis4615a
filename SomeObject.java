@@ -1,24 +1,14 @@
+
 public class SomeObject {
- 
-  // Locks on the object's monitor
-  public synchronized void changeValue() {
-    // ...
-  }
-  
-  public static SomeObject lookup(String name) {
+  //changeValue locks on the class object's monitor
+  public static synchronized void changeValue() {
     // ...
   }
 }
  
 // Untrusted code
-String name = // ...
-SomeObject someObject = SomeObject.lookup(name);
-if (someObject == null) {
-  // ... handle error
-}
-synchronized (someObject) {
+synchronized (SomeObject.class) {
   while (true) {
-    // Indefinitely lock someObject
-    Thread.sleep(Integer.MAX_VALUE);
+    Thread.sleep(Integer.MAX_VALUE); // Indefinitely delay someObject
   }
 }
