@@ -7,6 +7,6 @@ public final class R10_THI00_J10 implements Runnable {
  
   public static void main(String[] args) {
     Foo foo = new Foo();
-    new Thread(foo).run();
+    new Thread(foo).start();
   }
 }
