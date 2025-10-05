@@ -1,3 +1,6 @@
+// ERR00-J. Do not suppress or ignore checked exceptions
+// Compliant Solution (Interactive)
+
 boolean validFlag = false;
 do {
   try {
